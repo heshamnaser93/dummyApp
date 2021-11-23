@@ -21,7 +21,7 @@ const Login = (props) => {
 
     return () => {
       console.log("CleanUp");
-      // clearTimeout(identifier);
+      clearTimeout(identifier);
     };
   }, [enteredEmail, enteredPassword]);
 
