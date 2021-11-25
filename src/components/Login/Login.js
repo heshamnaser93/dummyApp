@@ -46,7 +46,7 @@ const Login = (props) => {
 
   useEffect(() => {
     const identifier = setTimeout(() => {
-      console.log("bla bla bla");
+      console.log("Check Validity!!");
       setFormIsValid(emailIsValid && passwordIsValid);
     }, 500);
 
