@@ -3,11 +3,8 @@ import React, { useState, useEffect, useReducer, useContext } from "react";
 import Card from "../UI/Card/Card";
 import Input from "../UI/Input/Input";
 import Button from "../UI/Button/Button";
-<<<<<<< HEAD
 import classes from "./Login.module.css";
-=======
 import AuthContext from "../../store/auth-context";
->>>>>>> 8c18a8e1425522283cacd58cd56caadfdbcae77c
 
 const emailReducer = (state, action) => {
   if (action.type === "USER_INPUT") {
@@ -85,7 +82,11 @@ const Login = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    authCtx.onLogin(emailState.value, passwordState.value);
+    if (formIsValid) {
+      authCtx.onLogin(emailState.value, passwordState.value);
+    } else if (!emailIsValid) {
+    } else {
+    }
   };
 
   return (
@@ -110,7 +111,7 @@ const Login = () => {
           onBlur={validatePasswordHandler}
         />
         <div className={classes.actions}>
-          <Button type="submit" className={classes.btn} disabled={!formIsValid}>
+          <Button type="submit" className={classes.btn}>
             Login
           </Button>
         </div>
