@@ -9,7 +9,7 @@ function App() {
   const ctx = useContext(AuthContext);
 
   return (
-    <React.Fragment value={{ isLoggedIn: isLoggedIn, onLogout: logoutHandler }}>
+    <React.Fragment>
       <MainHeader />
       <main>
         {!ctx.isLoggedIn && <Login />}
