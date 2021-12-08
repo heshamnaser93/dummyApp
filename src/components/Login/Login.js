@@ -91,12 +91,19 @@ const Login = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+<<<<<<< HEAD
     if (!formIsValid) {
       authCtx.onLogin(emailState.value, passwordState.value);
     } else if (!emailIsValid) {
       emailInputRef.current.focus();
     } else {
       passwordInputRef.current.focus();
+=======
+    if (formIsValid) {
+      authCtx.onLogin(emailState.value, passwordState.value);
+    } else if (!emailIsValid) {
+    } else {
+>>>>>>> fd99fb1711ae608c7784db8f0cfc17238b7b5f38
     }
   };
 
